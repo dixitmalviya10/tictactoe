@@ -2,8 +2,8 @@ export const manifestForPlugIn = {
     registerType: 'prompt',
     includeAssests: ['favicon.ico', "apple-touc-icon.png", "masked-icon.svg"],
     manifest: {
-        name: "Tic-Tac-Toe",
-        short_name: "tic-tac-toe",
+        name: "Tic Tac Toe",
+        short_name: "Tic Tac Toe",
         description: "I am a tic-tac-toe app",
         icons: [{
             src: '/android-chrome-192x192.png',
@@ -24,7 +24,7 @@ export const manifestForPlugIn = {
             purpose: 'apple touch icon',
         },
         {
-            src: '/maskable_icon.png',
+            src: '/logo.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable',
