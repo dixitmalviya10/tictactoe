@@ -2,12 +2,7 @@ import type { VitePWAOptions } from "vite-plugin-pwa";
 
 export const manifestForPlugIn: Partial<VitePWAOptions> = {
   registerType: "prompt",
-  includeAssets: [
-    "favicon.ico",
-    "favicon-16x16.png",
-    "favicon-32x32.png",
-    "apple-touch-icon.png",
-  ],
+  includeAssets: ["favicon.ico", "favicon.svg", "apple-touch-icon.png"],
   manifest: {
     name: "Tic Tac Toe",
     short_name: "Tic Tac Toe",
@@ -38,8 +33,8 @@ export const manifestForPlugIn: Partial<VitePWAOptions> = {
         purpose: "maskable",
       },
     ],
-    theme_color: "#171717",
-    background_color: "#f0e7db",
+    theme_color: "#020617",
+    background_color: "#020617",
     display: "standalone",
     scope: "/",
     start_url: "/",
