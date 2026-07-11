@@ -1,6 +1,13 @@
-import React from "react";
+import { useState } from "react";
 
-function Square({ value, onSquareClick }) {
+type SquareValue = "X" | "O" | null;
+
+type SquareProps = {
+  value: SquareValue;
+  onSquareClick: () => void;
+};
+
+function Square({ value, onSquareClick }: SquareProps) {
   return (
     <button
       onClick={onSquareClick}
@@ -11,10 +18,10 @@ function Square({ value, onSquareClick }) {
 }
 
 function App() {
-  const [squares, setSquares] = React.useState(Array(9).fill(null));
-  const [nextTurn, setNextTurn] = React.useState(true);
+  const [squares, setSquares] = useState<SquareValue[]>(Array(9).fill(null));
+  const [nextTurn, setNextTurn] = useState(true);
 
-  function handleClick(i) {
+  function handleClick(i: number) {
     if (squares[i] || calculateWinner(squares)) return;
     const nextSquares = squares.slice();
     if (nextTurn) {
@@ -27,7 +34,7 @@ function App() {
   }
 
   const winner = calculateWinner(squares);
-  let status;
+  let status: string;
   if (winner) {
     status = "Winner: " + winner;
   } else if (!winner && !squares.includes(null)) {
@@ -79,7 +86,7 @@ function App() {
 
 export default App;
 
-function calculateWinner(squares) {
+function calculateWinner(squares: SquareValue[]): SquareValue {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
